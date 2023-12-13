@@ -28,12 +28,12 @@ public class UserRegistration {
         }
         System.out.println("Valid last name entered: " + lastName);
 
-        // Ask the user to enter the last name
+        // Ask the user to enter their email
         System.out.println("Enter your email: ");
         String email = sc.nextLine();
 
-        // Validate the first name
-        while(!isValidName(email)) {
+        // Validate the email format
+        while(!isValidEmail(email)) {
             System.out.println("Invalid email! Please enter a valid email.");
             email = sc.nextLine();
         }
