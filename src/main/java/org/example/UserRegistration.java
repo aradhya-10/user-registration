@@ -11,18 +11,29 @@ public class UserRegistration {
         String firstName = sc.nextLine();
 
         // Validate the first name
-        while(!isValidFirstName(firstName)) {
+        while(!isValidName(firstName)) {
             System.out.println("Invalid first name! Please enter a first name starting with a capital letter and at least 3 characters long.");
             firstName = sc.nextLine();
         }
         System.out.println("Valid first name entered: " + firstName);
+
+        // Ask the user to enter the last name
+        System.out.println("Enter your first name: ");
+        String lastName = sc.nextLine();
+
+        // Validate the first name
+        while(!isValidName(lastName)) {
+            System.out.println("Invalid last name! Please enter a last name starting with a capital letter and at least 3 characters long.");
+            lastName = sc.nextLine();
+        }
+        System.out.println("Valid last name entered: " + lastName);
     }
 
-    // UC1: Validate the first name
-    public static boolean isValidFirstName(String firstName) {
+    // UC1 & UC2: Validate the first and last names
+    public static boolean isValidName(String name) {
     //    return firstName.length() >= 3 && Character.isUpperCase(firstName.charAt(0));
-        String firstNameRegex = "^[A-Z][a-zA-Z]{2,}$";
-        return firstName.matches(firstNameRegex);
+        String nameRegex = "^[A-Z][a-zA-Z]{2,}$";
+        return name.matches(nameRegex);
     }
 }
 
