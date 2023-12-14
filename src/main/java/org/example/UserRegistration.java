@@ -18,7 +18,7 @@ public class UserRegistration {
         System.out.println("Valid first name entered: " + firstName);
 
         // Ask the user to enter the last name
-        System.out.println("Enter your first name: ");
+        System.out.println("Enter your last name: ");
         String lastName = sc.nextLine();
 
         // Validate the first name
@@ -38,6 +38,17 @@ public class UserRegistration {
             email = sc.nextLine();
         }
         System.out.println("Valid email entered: " + email);
+
+        // Ask the user to enter their contact
+        System.out.println("Enter your email: ");
+        String contact = sc.nextLine();
+
+        // Validate the email format
+        while(!isValidContact(contact)) {
+            System.out.println("Invalid contact! Please enter a valid contact.");
+            contact = sc.nextLine();
+        }
+        System.out.println("Valid contact entered: " + contact);
     }
 
     // UC1 & UC2: Validate the first and last names
@@ -53,5 +64,13 @@ public class UserRegistration {
         String emailRegex = "^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\\.[a-zA-Z]{2,}){1,2}$";
         return email.matches(emailRegex);
     }
+
+    // UC4: Validate the contact
+    public static boolean isValidContact(String contact) {
+        // Mobile number pattern with + and country code followed by a 10-digit number
+        String contactRegex = "^\\+[0-9]{2}[1-9][0-9]{9}$";
+        return contact.matches(contactRegex);
+    }
+
 }
 
