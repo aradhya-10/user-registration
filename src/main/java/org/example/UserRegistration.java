@@ -43,7 +43,7 @@ public class UserRegistration {
         System.out.println("Enter your contact number: ");
         String contact = sc.nextLine();
 
-        // Validate the email format
+        // Validate the contact number
         while(!isValidContact(contact)) {
             System.out.println("Invalid contact! Please enter a valid contact.");
             contact = sc.nextLine();
@@ -54,7 +54,7 @@ public class UserRegistration {
         System.out.println("Enter your password: ");
         String password = sc.nextLine();
 
-        // Validate the email format
+        // Validate the password
         while(!isValidPassword(password)) {
             System.out.println("Invalid password! Please enter a valid password.");
             password = sc.nextLine();
@@ -85,8 +85,10 @@ public class UserRegistration {
 
     //UC5: Validate password
     public static boolean isValidPassword(String password) {
+        // UC6: At least one Upper Case Letter
+        String passRegex = ".*[A-Z].*";
         // Check if the password has a minimum of 8 characters
-        return password.length() >= 8;
+        return password.length() >= 8 && password.matches(passRegex);
     }
 }
 
