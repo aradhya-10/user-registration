@@ -87,8 +87,10 @@ public class UserRegistration {
     public static boolean isValidPassword(String password) {
         // UC6: At least one Upper Case Letter
         String passRegex = ".*[A-Z].*";
+        // UC7: At least one Numeral
+        String passRegex2 = ".*\\d.*";
         // Check if the password has a minimum of 8 characters
-        return password.length() >= 8 && password.matches(passRegex);
+        return password.length() >= 8 && password.matches(passRegex) && password.matches(passRegex2);
     }
 }
 
