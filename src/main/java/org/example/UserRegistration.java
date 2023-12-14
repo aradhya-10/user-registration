@@ -40,7 +40,7 @@ public class UserRegistration {
         System.out.println("Valid email entered: " + email);
 
         // Ask the user to enter their contact
-        System.out.println("Enter your email: ");
+        System.out.println("Enter your contact number: ");
         String contact = sc.nextLine();
 
         // Validate the email format
@@ -49,6 +49,17 @@ public class UserRegistration {
             contact = sc.nextLine();
         }
         System.out.println("Valid contact entered: " + contact);
+
+        // Ask the user to enter their password
+        System.out.println("Enter your password: ");
+        String password = sc.nextLine();
+
+        // Validate the email format
+        while(!isValidPassword(password)) {
+            System.out.println("Invalid password! Please enter a valid password.");
+            password = sc.nextLine();
+        }
+        System.out.println("Valid password entered" );
     }
 
     // UC1 & UC2: Validate the first and last names
@@ -72,5 +83,10 @@ public class UserRegistration {
         return contact.matches(contactRegex);
     }
 
+    //UC5: Validate password
+    public static boolean isValidPassword(String password) {
+        // Check if the password has a minimum of 8 characters
+        return password.length() >= 8;
+    }
 }
 
