@@ -25,4 +25,34 @@ public class TestEmailValidation {
         Matcher matcher = pattern.matcher(email);
         assertTrue(matcher.matches());
     }
+
+    // UC10: testing all other fields
+    @ParameterizedTest
+    @ValueSource(strings = { "aradhya", "Aradhya", "Ar", "ara", "Abc" })
+    public void testNames(String name) {
+        String nameRegex = "^[A-Z][a-zA-Z]{2,}$";
+        Pattern pattern = Pattern.compile(nameRegex);
+        Matcher matcher = pattern.matcher(name);
+        assertTrue(matcher.matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = { "91 9123456789", "+91912345678", "6394972187", "+9123456789", "91234 56789" })
+    public void testPhoneNumbers(String phone) {
+        String phoneRegex = "^[0-9]{1,4} [0-9]{5,15}$";
+        Pattern pattern = Pattern.compile(phoneRegex);
+        Matcher matcher = pattern.matcher(phone);
+        assertTrue(matcher.matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = { "Password", "password12", "Password12", "Password@12", "pass@12" })
+    public void testPassword(String pasword) {
+        String passwordRegex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z\\d]).{8,}$";
+        Pattern pattern = Pattern.compile(passwordRegex);
+        Matcher matcher = pattern.matcher(pasword);
+        assertTrue(matcher.matches());
+    }
 }
+
+//Tests passed only for valid inputs
