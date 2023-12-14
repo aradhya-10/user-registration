@@ -7,6 +7,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class TestEmailValidation {
 
     // UC9: testing with all sample strings
+    // UC11: validate multiple entries
+    // Already done, adding a few invalid emails
     @ParameterizedTest
     @ValueSource(strings = {
             "abc@yahoo.com",
@@ -17,7 +19,9 @@ public class TestEmailValidation {
             "abc.100@abc.com.au",
             "abc@1.com",
             "abc@gmail.com.com",
-            "abc+100@gmail.com"
+            "abc+100@gmail.com",
+            "abc.21.@gmail.com",
+            "aradhya@abc@gmail.com",
     })
     public void testEmails(String email) {
         String emailRegex = "^[a-zA-Z0-9.$&%_+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+$";
