@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19a2b0-4cb0-474b-af66-3f408a04709a" name="Changes" comment="UC3: Validate user's email">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestEmailValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UC8",
+    "git-widget-placeholder": "UC9",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
